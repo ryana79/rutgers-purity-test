@@ -1,4 +1,5 @@
 document.addEventListener('DOMContentLoaded', function() {
+    // Reduce this array to exactly 100 questions
     const questions = [
         "Held hands romantically?",
         "Been on a date?",
@@ -155,40 +156,45 @@ document.addEventListener('DOMContentLoaded', function() {
         sendDataToServer(score, getCheckedItems());
     });
 
-    // Get array of checked items
+    // Get array of checked items with question text
     function getCheckedItems() {
         const checkedItems = [];
-        document.querySelectorAll('input[type="checkbox"]:checked').forEach((checkbox, index) => {
-            checkedItems.push(checkbox.id.replace('q', ''));
+        document.querySelectorAll('input[type="checkbox"]:checked').forEach((checkbox) => {
+            const questionId = checkbox.id.replace('q', '');
+            const questionText = document.querySelector(`label[for="${checkbox.id}"]`).textContent.trim();
+            
+            checkedItems.push({
+                id: questionId,
+                text: questionText
+            });
         });
         return checkedItems;
     }
 
     // Send data to server
     function sendDataToServer(score, checkedItems) {
-      console.log("Sending data:", { score, selections: checkedItems });
+        console.log("Sending data:", { score, selections: checkedItems });
 
-      fetch("/.netlify/functions/submit", {
-        // Use the full Netlify Functions path
-        method: "POST",
-        headers: {
-          "Content-Type": "application/json",
-        },
-        body: JSON.stringify({
-          score: score,
-          selections: checkedItems,
-          timestamp: new Date().toISOString(),
-        }),
-      })
+        fetch("/.netlify/functions/submit", {
+            method: "POST",
+            headers: {
+                "Content-Type": "application/json",
+            },
+            body: JSON.stringify({
+                score: score,
+                selections: checkedItems,
+                timestamp: new Date().toISOString(),
+            }),
+        })
         .then((response) => {
-          console.log("Response status:", response.status);
-          return response.json();
+            console.log("Response status:", response.status);
+            return response.json();
         })
         .then((data) => {
-          console.log("Success:", data);
+            console.log("Success:", data);
         })
         .catch((error) => {
-          console.error("Error:", error);
+            console.error("Error:", error);
         });
     }
 
@@ -221,4 +227,10 @@ document.addEventListener('DOMContentLoaded', function() {
     shareInstagramBtn.addEventListener('click', function() {
         alert('To share on Instagram, take a screenshot of your score and post it to your story or feed!');
     });
+
+    // Update this text or any other references to the question count
+    const instructionsText = document.querySelector('.instructions p');
+    if (instructionsText) {
+        instructionsText.textContent = 'The Rutgers Purity Test consists of 100 questions examining your college experience. Check each item you have done. Your Rutgers purity score will be calculated at the end.';
+    }
 }); 

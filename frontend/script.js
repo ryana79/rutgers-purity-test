@@ -166,7 +166,7 @@ document.addEventListener('DOMContentLoaded', function() {
 
     // Send data to server
     function sendDataToServer(score, checkedItems) {
-        fetch('/api/submit-results', {
+        fetch('/api/submit', {
             method: 'POST',
             headers: {
                 'Content-Type': 'application/json',

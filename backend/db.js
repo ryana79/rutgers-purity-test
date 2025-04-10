@@ -10,10 +10,17 @@ const dbName = process.env.DB_NAME || 'rutgersPurityTest';
 let client;
 let db;
 
+process.env.NODE_TLS_REJECT_UNAUTHORIZED = '0'; // Only use in development!
+
 async function connectToDatabase() {
     try {
-        // Simplified connection options
-        client = new MongoClient(uri);
+        client = new MongoClient(uri, {
+            useNewUrlParser: true,
+            useUnifiedTopology: true,
+            serverSelectionTimeoutMS: 5000,
+            socketTimeoutMS: 45000,
+        });
+        
         await client.connect();
         console.log('Connected to MongoDB');
         

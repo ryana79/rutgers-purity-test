@@ -2,6 +2,7 @@ services:
   - type: web
     name: rutgers-purity-test
     env: node
+    nodeVersion: 18
     buildCommand: npm install
     startCommand: npm start
     envVars:

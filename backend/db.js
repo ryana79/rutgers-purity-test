@@ -12,7 +12,14 @@ let db;
 
 async function connectToDatabase() {
     try {
-        client = new MongoClient(uri);
+        client = new MongoClient(uri, {
+            ssl: true,
+            tls: true,
+            tlsAllowInvalidCertificates: false,
+            tlsAllowInvalidHostnames: false,
+            // Force TLS version
+            tlsCAFile: require('path').resolve(__dirname, '../node_modules/mongodb/lib/tls/ca.pem')
+        });
         await client.connect();
         console.log('Connected to MongoDB');
         

@@ -166,23 +166,29 @@ document.addEventListener('DOMContentLoaded', function() {
 
     // Send data to server
     function sendDataToServer(score, checkedItems) {
-        fetch('/api/submit', {
-            method: 'POST',
-            headers: {
-                'Content-Type': 'application/json',
-            },
-            body: JSON.stringify({
-                score: score,
-                selections: checkedItems,
-                timestamp: new Date().toISOString()
-            }),
+      console.log("Sending data:", { score, selections: checkedItems });
+
+      fetch("/.netlify/functions/submit", {
+        // Use the full Netlify Functions path
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify({
+          score: score,
+          selections: checkedItems,
+          timestamp: new Date().toISOString(),
+        }),
+      })
+        .then((response) => {
+          console.log("Response status:", response.status);
+          return response.json();
         })
-        .then(response => response.json())
-        .then(data => {
-            console.log('Success:', data);
+        .then((data) => {
+          console.log("Success:", data);
         })
         .catch((error) => {
-            console.error('Error:', error);
+          console.error("Error:", error);
         });
     }
 

@@ -11,4 +11,5 @@ services:
       - key: MONGODB_URI
         sync: false
       - key: DB_NAME
-        value: rutgersPurityTest 
+        value: rutgersPurityTest
+    plan: free 

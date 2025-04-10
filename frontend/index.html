@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Rutgers Purity Test</title>
+    <link rel="stylesheet" href="styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <div class="container">
+        <header>
+            <div class="logo">
+                <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/b/b6/Rutgers_Scarlet_Knights_logo.svg/1200px-Rutgers_Scarlet_Knights_logo.svg.png" alt="Rutgers Logo">
+            </div>
+            <h1>Rutgers Purity Test</h1>
+            <p class="subtitle">How Scarlet Knight are you?</p>
+        </header>
+
+        <div class="instructions">
+            <p>The Rutgers Purity Test consists of 100 questions examining your college experience. Check each item you have done. Your Rutgers purity score will be calculated at the end.</p>
+            <p><strong>Higher score = more pure | Lower score = more experienced</strong></p>
+        </div>
+
+        <form id="purityForm">
+            <div class="questions">
+                <!-- Questions will be added here by JavaScript -->
+            </div>
+
+            <div class="button-container">
+                <button type="submit" id="submitBtn">Calculate My Score</button>
+                <button type="reset" id="resetBtn">Reset Selections</button>
+            </div>
+        </form>
+
+        <div id="results" class="hidden">
+            <h2>Your Rutgers Purity Score</h2>
+            <div class="score-circle">
+                <span id="scoreDisplay">100</span>
+            </div>
+            <p class="score-description">Your score indicates how "pure" your college experience has been.</p>
+            <div class="share-container">
+                <p>Share your score:</p>
+                <div class="social-buttons">
+                    <button id="shareTwitter" class="social-btn twitter">Twitter</button>
+                    <button id="shareFacebook" class="social-btn facebook">Facebook</button>
+                    <button id="shareInstagram" class="social-btn instagram">Instagram</button>
+                </div>
+                <button id="retakeBtn" class="retake-btn">Take Test Again</button>
+            </div>
+        </div>
+
+        <footer>
+            <p>© 2023 Rutgers Purity Test | For entertainment purposes only</p>
+            <p>Not officially affiliated with Rutgers University</p>
+        </footer>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html> 

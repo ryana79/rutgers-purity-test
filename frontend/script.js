@@ -1,11 +1,11 @@
 document.addEventListener('DOMContentLoaded', function() {
-    // Reduce this array to exactly 100 questions
+    // Reduced to exactly 100 questions (removed 4)
     const questions = [
-        "Held hands romantically?",
+        // "Held hands romantically?", - REMOVED (1/4)
         "Been on a date?",
         "Been in a relationship?",
         "Danced with someone romantically?",
-        "Kissed someone on the cheek?",
+        // "Kissed someone on the cheek?", - REMOVED (2/4)
         "Kissed someone on the lips?",
         "Made out with someone?",
         "Been to a Rutgers football game?",
@@ -40,10 +40,10 @@ document.addEventListener('DOMContentLoaded', function() {
         "Drank alcohol?",
         "Been drunk?",
         "Played beer pong?",
-        "Done a keg stand?",
+        // "Done a keg stand?", - REMOVED (3/4)
         "Blacked out from drinking?",
         "Thrown up from drinking?",
-        "Pregamed before class?",
+        // "Pregamed before class?", - REMOVED (4/4)
         "Gone to class hungover?",
         "Smoked marijuana?",
         "Used other recreational drugs?",
@@ -106,6 +106,9 @@ document.addEventListener('DOMContentLoaded', function() {
         "Celebrated Rutgers' birthday?",
         "Went down to the banks of the old Raritan"
     ];
+
+    // Ensure we have exactly 100 questions
+    console.log(`Total questions: ${questions.length}`);
 
     const questionsContainer = document.querySelector('.questions');
     const submitBtn = document.getElementById('submitBtn');

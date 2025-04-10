@@ -1,13 +1,13 @@
 document.addEventListener('DOMContentLoaded', function() {
-    // Reduced to exactly 100 questions (removed 4)
+    // Reduced to exactly 100 questions with more appropriate phrasing
     const questions = [
         // "Held hands romantically?", - REMOVED (1/4)
         "Been on a date?",
         "Been in a relationship?",
-        "Danced with someone romantically?",
+        "Danced with someone at a Rutgers event?",
         // "Kissed someone on the cheek?", - REMOVED (2/4)
-        "Kissed someone on the lips?",
-        "Made out with someone?",
+        "Kissed someone?",
+        "Spent romantic time with someone?",
         "Been to a Rutgers football game?",
         "Attended a frat party?",
         "Been to the Yard on College Ave?",
@@ -32,21 +32,21 @@ document.addEventListener('DOMContentLoaded', function() {
         "Called the wrong professor 'professor'?",
         "Skipped class to sleep in?",
         "Failed a college exam?",
-        "Cheated on a college exam?",
+        "Looked at unauthorized materials during an exam?",
         "Pulled an all-nighter to finish an assignment?",
         "Submitted an assignment one minute before the deadline?",
         "Fallen asleep in class?",
-        "Used a fake ID?",
-        "Drank alcohol?",
-        "Been drunk?",
-        "Played beer pong?",
+        "Used a friend's ID to get into an event?",
+        "Attended a party with alcohol?",
+        "Had too much fun at a party?",
+        "Played a party game with red cups?",
         // "Done a keg stand?", - REMOVED (3/4)
-        "Blacked out from drinking?",
-        "Thrown up from drinking?",
+        "Woken up feeling ill after a party?",
+        "Been sick after a social event?",
         // "Pregamed before class?", - REMOVED (4/4)
-        "Gone to class hungover?",
-        "Smoked marijuana?",
-        "Used other recreational drugs?",
+        "Attended a morning class feeling unwell from the night before?",
+        "Tried recreational herbs?",
+        "Experimented with substances not sold at CVS?",
         "Visited The Yard during finals week?",
         "Gone to a party on Easton Ave?",
         "Been to New Brunswick after midnight?",
